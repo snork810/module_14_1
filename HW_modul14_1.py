@@ -13,7 +13,7 @@ cursor.execute('''
 for i in range (1, 11):
     cursor.execute('INSERT INTO Users (username, email, age, balance) VALUES (?, ?, ?, ?)', (f'User{i}', f'example{i}@gmail.com', i*10, 1000))
 
-cursor.execute('UPDATE Users SET balance = ? WHERE id % 2 = ?', (500, 0))
+cursor.execute('UPDATE Users SET balance = ? WHERE id % 2 = ?', (500, 1))
 cursor.execute("SELECT id FROM Users") 
 rows = cursor.fetchall()
 for index in range(len(rows)): 
